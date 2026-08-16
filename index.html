@@ -41,9 +41,9 @@
         </button>
       </div>
     </main>
-    <form>
+    <form class="recipe-form">
       <label for="name">Recipe Name:</label>
-      <input type="text" id="name" />
+      <input type="text" id="name" required />
       <br />
       <label for="ingredients">Ingredients:</label>
       <textarea id="ingredients"></textarea>
@@ -51,22 +51,27 @@
       <label for="steps">Steps:</label>
       <textarea id="steps"></textarea>
       <br />
-      <label for="time">Time to prepare:</label>
-      <input type="number" id="time" placeholder="Enter the time in minutes" />
+      <label for="time" required>Time to prepare:</label>
+      <input
+        type="number"
+        id="time"
+        placeholder="Enter the time in minutes"
+        required
+      />
       <br />
       <label for="servings">Amount of servings</label>
-      <input type="number" id="serving-num" />
+      <input type="number" id="servings" required />
       <br />
       <label for="type">Type: </label>
-      <select>
+      <select id="type">
         <option>Breakfast</option>
         <option>Lunch</option>
         <option>Dinner</option>
         <option>Dessert</option>
         <option>Snack</option>
       </select>
-      <button id="cancel-btn">Cancel</button>
-      <button id="add-btn">Add Recipe</button>
+      <button type="button" id="cancel-btn">Cancel</button>
+      <button type="submit" id="add-btn">Add Recipe</button>
     </form>
     <script src="script.js"></script>
   </body>
