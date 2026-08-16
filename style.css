@@ -24,11 +24,12 @@ main {
   padding: 5px;
 }
 
-input {
+main input {
   padding: 10px 5px;
   width: 80%;
   border: 2px solid #e8e2db;
   border-radius: 10px;
+  display: inline-block;
 }
 
 input:focus {
@@ -93,4 +94,52 @@ input:focus {
   background-color: #f5dfc5;
   border-radius: 10px;
   padding: 5px;
+}
+
+form {
+  display: none;
+  text-align: left;
+  position: fixed;
+  top: 100px;
+  left: 150px;
+  width: 60%;
+  height: 80%;
+  background-color: #fdfdfc;
+  border: 2px solid #f1943c;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+form input,
+form textarea,
+form select {
+  padding: 10px 5px;
+  width: 98%;
+  border: 2px solid #e8e2db;
+  border-radius: 10px;
+  display: block;
+  margin: 10px 0;
+}
+
+textarea:focus {
+  outline: 2px solid #f1943c;
+}
+
+form button {
+  margin: 50px;
+  width: 30%;
+  padding: 15px 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #f5dfc5;
+}
+
+#cancel-btn:hover {
+  background-color: #d85c45;
+  color: white;
+}
+
+#add-btn:hover {
+  background-color: #76855f;
+  color: white;
 }
