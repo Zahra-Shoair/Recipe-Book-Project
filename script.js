@@ -73,3 +73,63 @@ function displayRecipes(recipes) {
         </button>`;
   recipesContainer.innerHTML = html;
 }
+
+// ---------------------------------------------------------
+const allFilter = document.querySelector("#all");
+const breakfastFilter = document.querySelector("#breakfast");
+const lunchFilter = document.querySelector("#lunch");
+const dinnerFilter = document.querySelector("#dinner");
+const dessertFilter = document.querySelector("#dessert");
+const snackFilter = document.querySelector("#snack");
+const favouritesFilter = document.querySelector("#favourites");
+
+allFilter.addEventListener("click", () => {
+  displayRecipes(recipes);
+  changeFilterStyle("all");
+});
+
+breakfastFilter.addEventListener("click", () => {
+  displayRecipes(returnFilteredRecipes("Breakfast"));
+  changeFilterStyle("Breakfast");
+});
+
+lunchFilter.addEventListener("click", () => {
+  displayRecipes(returnFilteredRecipes("Lunch"));
+  changeFilterStyle("Lunch");
+});
+
+dinnerFilter.addEventListener("click", () => {
+  displayRecipes(returnFilteredRecipes("Dinner"));
+  changeFilterStyle("Dinner");
+});
+
+dessertFilter.addEventListener("click", () => {
+  displayRecipes(returnFilteredRecipes("Dessert"));
+  changeFilterStyle("Dessert");
+});
+
+snackFilter.addEventListener("click", () => {
+  displayRecipes(returnFilteredRecipes("Snack"));
+  changeFilterStyle("Snack");
+});
+
+function returnFilteredRecipes(filter) {
+  const filteredRecipes = [];
+  recipes.forEach((recipe) => {
+    if (recipe.type === filter) {
+      filteredRecipes.push(recipe);
+    }
+  });
+  return filteredRecipes;
+}
+
+function changeFilterStyle(filter) {
+  const filtersContainer = document.querySelectorAll(`.filter`);
+  filtersContainer.forEach((filter) => {
+    filter.style.backgroundColor = "";
+    filter.style.color = "";
+  });
+  document.querySelector(`#${filter.toLowerCase()}`).style.backgroundColor =
+    "#F1943C";
+  document.querySelector(`#${filter.toLowerCase()}`).style.color = "white";
+}
