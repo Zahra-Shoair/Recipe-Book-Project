@@ -60,15 +60,12 @@ input:focus {
   padding: 10px;
 }
 
-.card-container {
-  display: inline-block;
-}
-
 .recipe-card {
   height: 300px;
   width: 200px;
   padding: 10px;
-  position: relative;
+  display: inline-block;
+  vertical-align: top;
   margin-right: 10px;
   border: 2px solid #e8e2db;
   border-radius: 10px;
@@ -78,7 +75,6 @@ input:focus {
 .add-recipe-btn {
   height: 300px;
   width: 200px;
-  position: absolute;
   border: 2px solid #e8e2db;
   border-radius: 10px;
   background-color: #fdfdfc;

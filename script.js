@@ -13,6 +13,7 @@ recipesContainer.addEventListener("click", (e) => {
 
 cancelBtn.addEventListener("click", () => {
   form.style.display = "none";
+  form.reset();
 });
 
 addBtn.addEventListener("click", (e) => {
@@ -21,6 +22,7 @@ addBtn.addEventListener("click", (e) => {
     addRecipeObject();
     displayRecipes(recipes);
     form.style.display = "none";
+    form.reset();
   }
 });
 
@@ -58,9 +60,9 @@ function displayRecipes(recipes) {
     html += `<button class="recipe-card">
           <img src="images/recipe (1).png" alt="Placeholder icon for a recipe" />
           <p class="recipe-name">${recipe.name}</p>
-          <span class="attribute" id="duration-span">${recipe.time} Mins</span>
-          <span id="servings-span" class="attribute">${recipe.servings} Servings</span>
-          <span id="type-span" class="attribute">${recipe.type}</span>
+          <span class="attribute">${recipe.time} Mins</span>
+          <span class="attribute">${recipe.servings} Servings</span>
+          <span class="attribute">${recipe.type}</span>
         </button>`;
   });
   html += `<button class="add-recipe-btn">
@@ -116,7 +118,6 @@ const lunchFilter = document.querySelector("#lunch");
 const dinnerFilter = document.querySelector("#dinner");
 const dessertFilter = document.querySelector("#dessert");
 const snackFilter = document.querySelector("#snack");
-const favouritesFilter = document.querySelector("#favourites");
 
 allFilter.addEventListener("click", () => {
   displayRecipes(recipes);
@@ -171,12 +172,12 @@ function changeFilterStyle(filter) {
 
 //------------------------------------------------------
 const searchBar = document.querySelector("#search");
-searchBar.addEventListener("input", ()=>{
+searchBar.addEventListener("input", () => {
   const filteredRecipe = [];
-  recipes.forEach((recipe)=>{
-    if (recipe.name.toLowerCase().startsWith(searchBar.value.toLowerCase())){
+  recipes.forEach((recipe) => {
+    if (recipe.name.toLowerCase().startsWith(searchBar.value.toLowerCase())) {
       filteredRecipe.push(recipe);
     }
-  })
+  });
   displayRecipes(filteredRecipe);
-})
+});
