@@ -59,6 +59,10 @@ input:focus {
   padding: 10px;
 }
 
+.card-container {
+  display: inline-block;
+}
+
 .recipe-card {
   height: 300px;
   width: 200px;
@@ -100,10 +104,11 @@ form {
   display: none;
   text-align: left;
   position: fixed;
-  top: 100px;
-  left: 150px;
-  width: 60%;
-  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 700px;
   background-color: #fdfdfc;
   border: 2px solid #f1943c;
   border-radius: 10px;
@@ -141,5 +146,54 @@ form button {
 
 #add-btn:hover {
   background-color: #76855f;
+  color: white;
+}
+
+.card-info {
+  display: none;
+  text-align: left;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 850px;
+  background-image: url("images/background.png");
+  border: 2px solid #ca7b31;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.info-section {
+  border: 2px solid #76855f;
+  border-radius: 10px;
+  margin: 40px 0;
+  padding: 10px;
+}
+
+.card-info h2 {
+  font-size: 36px;
+  color: #ca7b31;
+}
+
+.card-info h3 {
+  font-size: 24px;
+  color: #76855f;
+}
+
+.card-info button {
+  margin: 50px;
+  width: 60%;
+  padding: 15px 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #76855f;
+  color: white;
+  font-size: 24px;
+}
+
+#close-btn:hover {
+  background-color: #d85c45;
   color: white;
 }

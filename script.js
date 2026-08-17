@@ -72,7 +72,42 @@ function displayRecipes(recipes) {
           <p>Add New Recipe</p>
         </button>`;
   recipesContainer.innerHTML = html;
+
+  // --------------------------------------------
+  const recipeCards = document.querySelectorAll(".recipe-card");
+
+  recipeCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      let currentRecipe;
+      recipes.forEach((recipe) => {
+        if (recipe.name === card.querySelector(".recipe-name").textContent) {
+          currentRecipe = recipe;
+        }
+      });
+
+      document.querySelector(".insert-name").textContent = currentRecipe.name;
+
+      document.querySelector(".insert-time").textContent =
+        `${currentRecipe.time} Mins`;
+      document.querySelector(".insert-servings").textContent =
+        `${currentRecipe.servings} Servings`;
+      document.querySelector(".insert-type").textContent = currentRecipe.type;
+
+      document.querySelector(".insert-ingredients").textContent =
+        currentRecipe.ingredients;
+
+      document.querySelector(".insert-steps").textContent = currentRecipe.steps;
+
+      document.querySelector(".card-info").style.display = "block";
+    });
+  });
 }
+
+// ---------------------------------------------------------
+const removeBtn = document.querySelector("#close-btn");
+removeBtn.addEventListener("click", () => {
+  document.querySelector(".card-info").style.display = "none";
+});
 
 // ---------------------------------------------------------
 const allFilter = document.querySelector("#all");
