@@ -1,6 +1,8 @@
 ﻿# Recipe-Book-Project
 A simple recipe book webpage to store/search your recipes made with HTML, CSS and JavaScript.
 
+![Recipe Book](screenshots/Default.png)
+
 # Features
 - Add new recipes
 - Search for recipes
