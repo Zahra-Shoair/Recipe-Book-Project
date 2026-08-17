@@ -168,3 +168,15 @@ function changeFilterStyle(filter) {
     "#F1943C";
   document.querySelector(`#${filter.toLowerCase()}`).style.color = "white";
 }
+
+//------------------------------------------------------
+const searchBar = document.querySelector("#search");
+searchBar.addEventListener("input", ()=>{
+  const filteredRecipe = [];
+  recipes.forEach((recipe)=>{
+    if (recipe.name.toLowerCase().startsWith(searchBar.value.toLowerCase())){
+      filteredRecipe.push(recipe);
+    }
+  })
+  displayRecipes(filteredRecipe);
+})
